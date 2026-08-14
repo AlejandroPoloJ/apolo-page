@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #FAFAF8;
+  --surface: #FFFFFF;
+  --surface-2: #cfcfca;
+  --border: #E2E2DE;
+  --ink: #14181C;
+  --ink-muted: #5B6570;
+  --ink-faint: #030303;
+  --accent: #B5791F;
+  --accent-ink: #FFFFFF;
+  --ok: #1F7A5C;
+  --ok-bg: #E7F3EC;
+  --close: #FF0000;
+  --restore: #FFCC00;
+  --minimize: #0BA800;
+  --font-display: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --radius: 3px;
+  --max-width: 960px;
+
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --bg: #10151A;
+  --surface: #171E25;
+  --surface-2: #1D242C;
+  --border: #2A333C;
+  --ink: #E8EAED;
+  --ink-muted: #97A2AD;
+  --ink-faint: #66717C;
+  --accent: #D9A548;
+  --accent-ink: #14181C;
+  --ok: #4CBE93;
+  --ok-bg: #16281F;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  .page-head {
+    padding: 40px 0 24px;
+  }
+}
+
+/* --- Botones (compartido) --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn--primary:hover {
+  background: color-mix(in srgb, var(--accent) 88%, black 12%);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--ink);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn--full {
+  width: 100%;
+  justify-content: center;
+}
+
+/* --- Tarjeta de proyecto (compartido) --- */
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.15s ease;
+}
+
+.project-card:hover {
+  border-color: var(--ink-faint);
+}
+
+.project-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.project-card__head h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.project-card__desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+}
+
+.project-card__tags li {
+  font-size: 11px;
+  color: var(--ink-faint);
+  background: var(--surface-2);
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.project-card__links {
+  display: flex;
+  gap: 14px;
+  margin-top: 4px;
+  font-size: 12.5px;
+}
+
+.project-card__links a {
+  color: var(--ink-muted);
+}
+
+.project-card__links a:hover {
+  color: var(--accent);
+}
+
+/* --- Encabezados de sección tipo ruta --- */
+.section-label {
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin: 0 0 8px;
+}
+
+.page-head {
+  padding: 56px 0 32px;
+}
+
+.page-head h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  margin: 6px 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.page-head p {
+  color: var(--ink-muted);
+  font-size: 16px;
+  max-width: 560px;
+  line-height: 1.6;
+  margin: 0;
+}

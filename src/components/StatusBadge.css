@@ -1,0 +1,49 @@
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+.status-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.status-badge--ok {
+  color: var(--ok);
+  background: var(--ok-bg);
+}
+.status-badge--ok .status-badge__dot {
+  background: var(--ok);
+}
+
+.status-badge--wip {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+.status-badge--wip .status-badge__dot {
+  background: var(--accent);
+}
+
+.status-badge--archived {
+  color: var(--ink-faint);
+  background: var(--surface-2);
+}
+.status-badge--archived .status-badge__dot {
+  background: var(--ink-faint);
+}
+
+.status-badge--error {
+  color: var(--error, #f44336);
+  background: color-mix(in srgb, var(--error, #f44336) 14%, transparent);
+}
+
+.status-badge--error .status-badge__dot {
+  background: var(--error, #f44336);
+}
