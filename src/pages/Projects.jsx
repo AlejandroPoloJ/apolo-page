@@ -7,7 +7,7 @@ const projects = [
     desc: 'Sistema distribuido de gestión de pedidos desarrollado con Java y Spring Boot, compuesto por microservicios de pedidos, inventario y pagos, con comunicación asíncrona mediante Apache Kafka, Saga por coreografía, Transactional Outbox, PostgreSQL y control de idempotencia.',
     tags: ['Spring Boot', 'Microservices', 'Apache Kafka', 'Saga', 'Outbox', 'PostgreSQL'],
     status: 'ok',
-    repo: null,
+    repo: 'https://github.com/AlejandroPoloJ/orderflow',
     demo: null,
   },
   {
