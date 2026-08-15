@@ -51,7 +51,7 @@ const skills = [
   },
   {
     group: 'Mensajería',
-    items: ['RabbitMQ', 'Arquitectura orientada a eventos'],
+    items: ['Apache Kafka', 'RabbitMQ', 'Arquitectura orientada a eventos'],
   },
   {
     group: 'DevOps',
