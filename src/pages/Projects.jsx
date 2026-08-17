@@ -16,7 +16,7 @@ const projects = [
     tags: ['Spring Boot', 'Hexagonal', 'Apache Kafka', 'DDD'],
     status: 'ok',
     repo: 'https://github.com/AlejandroPoloJ/library-management',
-    demo: null,
+    demo: 'https://library-management-front.pages.dev',
   },
   {
     name: 'autoPLAME',
